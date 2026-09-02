@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="manifest" href="sociroapp.webmanifest">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <script>
+            window.addEventListener("load", (event) => {
+                window.ROConfig = {
+                    development: false,
+                    target: document.getElementById("browser"),
+                    remoteClient:  "https://grf.sociro.net/",
+                    servers: [
+                        {
+                            display: 'sociRO',
+                            desc: "sociRO",
+                            address: 'sociro.net',
+                            port: 6900,
+                            version: 55,
+                            langtype: 1,
+                            packetver: 20220406,
+                            socketProxy: "wss://sociro.net:5999/",
+                            packetKeys: false,
+							registrationweb: "https://sociro.net/account/create/",
+                            renewal: true
+                        }
+                    ],
+                    version: 20260902.00,
+                    packetDump: false,
+                    skipServerList: true,
+                    skipIntro: true,
+                    clientHash: null,
+                    enableCashShop: false,
+                    enableBank: true,
+                    enableMapName: true,
+                    enableRefineUI: true,
+                    enableDmgSuffix: true,
+                    enableCheckAttendance: true,
+                    CameraMaxZoomOut: 4,
+                    loadLua: true,
+					development: true,
+          			ThirdPersonCamera:	true,
+					FirstPersonCamera:	true
+                };
+                script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = 'Online.js';
+                document.getElementsByTagName('body')[0].appendChild(script);
+            }, false);
+        </script>
+    </head>
+    <body></body>
+</html>
