@@ -1,0 +1,16 @@
+{
+  "name": "sociRO",
+  "short_name": "sociRO",
+  "description": "sociRO - sRO",
+  "icons": [
+      {
+          "src": "slogo.png",
+          "sizes": "144x144",
+          "purpose": "any"
+      }
+  ],
+  "start_url": "app.html?fullscreen=true",
+  "display": "fullscreen",
+  "theme_color": "#4e84e9",
+  "background_color": "#ffffff"
+}

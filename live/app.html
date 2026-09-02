@@ -9,7 +9,6 @@
         <script>
             window.addEventListener("load", (event) => {
                 window.ROConfig = {
-                    development: false,
                     target: document.getElementById("browser"),
                     remoteClient:  "https://grf.sociro.net/",
                     servers: [
@@ -23,7 +22,7 @@
                             packetver: 20220406,
                             socketProxy: "wss://sociro.net:5999/",
                             packetKeys: false,
-							registrationweb: "https://sociro.net/account/create/",
+							              registrationweb: "https://sociro.net/account/create/",
                             renewal: true
                         }
                     ],
@@ -45,7 +44,7 @@
 					FirstPersonCamera:	true
                 };
                 script = document.createElement('script');
-                script.type = 'text/javascript';
+                script.type = 'module';
                 script.src = 'Online.js';
                 document.getElementsByTagName('body')[0].appendChild(script);
             }, false);
