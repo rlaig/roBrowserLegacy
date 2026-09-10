@@ -15,7 +15,8 @@ const APP = {
 	MODELVIEWER: 4,
 	STRVIEWER: 5,
 	GRANNYMODELVIEWER: 6,
-	EFFECTVIEWER: 7
+	EFFECTVIEWER: 7,
+	UVIEWER: 8
 };
 
 /**
@@ -50,6 +51,10 @@ async function launch(config) {
 
 		case APP.EFFECTVIEWER:
 			await import('App/EffectViewer.js');
+			break;
+
+		case APP.UVIEWER:
+			await import('App/UViewer.js');
 			break;
 
 		default:

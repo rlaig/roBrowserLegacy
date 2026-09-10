@@ -52,7 +52,8 @@ const entryMap = {
 	ModelViewer: 'src/App/ModelViewer.js',
 	Online: 'src/App/Online.js',
 	StrViewer: 'src/App/StrViewer.js',
-	EffectViewer: 'src/App/EffectViewer.js'
+	EffectViewer: 'src/App/EffectViewer.js',
+	UViewer: 'src/App/UViewer.js'
 };
 
 (async function build() {
@@ -66,6 +67,7 @@ const entryMap = {
 		O: { path: '/Online.js', action: () => compile('Online', args['m']) },
 		S: { path: '/StrViewer.js', action: () => compile('StrViewer', args['m']) },
 		E: { path: '/EffectViewer.js', action: () => compile('EffectViewer', args['m']) },
+		U: { path: '/UViewer.js', action: () => compile('UViewer', args['m']) },
 		T: { path: '/ThreadEventHandler.js', action: () => compile('ThreadEventHandler', args['m']) },
 		H: { path: '/index.html', action: () => createHTML(false, args, isAll) },
 		PWA: {
@@ -174,7 +176,8 @@ function createHTML(includeManifest = false, buildArgs = {}, isAllBuild = false)
 		{ flag: 'V', app: 'MAPVIEWER', label: 'Map Viewer' },
 		{ flag: 'M', app: 'MODELVIEWER', label: 'Model Viewer' },
 		{ flag: 'S', app: 'STRVIEWER', label: 'STR Viewer' },
-		{ flag: 'E', app: 'EFFECTVIEWER', label: 'Effect Viewer' }
+		{ flag: 'E', app: 'EFFECTVIEWER', label: 'Effect Viewer' },
+		{ flag: 'U', app: 'UVIEWER', label: 'UI Viewer (UViewer)' }
 	];
 
 	const viewerFlags = appButtonMap.filter(v => v.flag !== 'O').map(v => v.flag);
@@ -604,10 +607,11 @@ function createApiHTML() {
                 GRFVIEWER: 'GrfViewer.js',    
                 MODELVIEWER: 'ModelViewer.js',    
                 STRVIEWER: 'StrViewer.js',    
-                GRANNYMODELVIEWER: 'GrannyModelViewer.js',    
-                EFFECTVIEWER: 'EffectViewer.js'    
-            };    
-            var APP_IDS = { 1: 'ONLINE', 2: 'MAPVIEWER', 3: 'GRFVIEWER', 4: 'MODELVIEWER', 5: 'STRVIEWER', 6: 'GRANNYMODELVIEWER', 7: 'EFFECTVIEWER' };    
+                GRANNYMODELVIEWER: 'GrannyModelViewer.js',
+                EFFECTVIEWER: 'EffectViewer.js',
+                UVIEWER: 'UViewer.js'
+            };
+            var APP_IDS = { 1: 'ONLINE', 2: 'MAPVIEWER', 3: 'GRFVIEWER', 4: 'MODELVIEWER', 5: 'STRVIEWER', 6: 'GRANNYMODELVIEWER', 7: 'EFFECTVIEWER', 8: 'UVIEWER' };
     
             function loadApp(appName, extraConfig) {    
                 var scriptFile = APP_SCRIPTS[appName] || 'Online.js';    

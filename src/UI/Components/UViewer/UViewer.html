@@ -1,0 +1,38 @@
+<div class="uviewer">
+	<div class="title">UViewer — mock server</div>
+
+	<div class="row">
+		<label>Profile
+			<select class="profile"></select>
+		</label>
+		<label>Scenario
+			<select class="scenario"></select>
+		</label>
+	</div>
+
+	<div class="row">
+		<label class="grow">Map
+			<input class="map" type="text" list="uviewer-maps" spellcheck="false" />
+			<datalist id="uviewer-maps"></datalist>
+		</label>
+	</div>
+
+	<div class="row actions">
+		<button class="restart">Start</button>
+		<button class="pause" disabled>No scenario</button>
+		<select class="speed" title="Scenario speed">
+			<option value="0.5">0.5×</option>
+			<option value="1" selected>1×</option>
+			<option value="2">2×</option>
+			<option value="4">4×</option>
+		</select>
+	</div>
+
+	<div class="status">
+		<span class="state">READY</span> · <span class="map">pick options, then Start</span>
+	</div>
+
+	<div class="counters off">no session</div>
+
+	<div class="log"></div>
+</div>

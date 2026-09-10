@@ -1,0 +1,134 @@
+/* UViewer control panel */
+
+:host {
+	position: absolute;
+	z-index: 1000;
+	width: 330px;
+	font-family: monospace;
+	font-size: 12px;
+	color: #d8e2e8;
+	user-select: none;
+}
+
+.uviewer {
+	background: rgba(16, 20, 26, 0.92);
+	border: 1px solid #2c3a46;
+	border-radius: 6px;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+}
+
+.title {
+	padding: 6px 10px;
+	background: #1d2731;
+	border-bottom: 1px solid #2c3a46;
+	font-weight: bold;
+	cursor: move;
+	letter-spacing: 0.04em;
+}
+
+.row {
+	display: flex;
+	gap: 8px;
+	padding: 6px 10px 0;
+	align-items: center;
+}
+
+.row:last-of-type {
+	padding-bottom: 6px;
+}
+
+label {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	flex: 1;
+	color: #7f96a6;
+}
+
+label.grow {
+	flex: 1;
+}
+
+select,
+input {
+	width: 100%;
+	box-sizing: border-box;
+	background: #0d1319;
+	color: #d8e2e8;
+	border: 1px solid #2c3a46;
+	border-radius: 3px;
+	padding: 3px 4px;
+	font-family: inherit;
+	font-size: 12px;
+}
+
+input {
+	user-select: text;
+}
+
+.actions {
+	justify-content: flex-start;
+}
+
+.actions label,
+.actions select {
+	flex: 0 0 auto;
+	width: auto;
+}
+
+button {
+	background: #24425c;
+	color: #d8e2e8;
+	border: 1px solid #38566f;
+	border-radius: 3px;
+	padding: 4px 10px;
+	font-family: inherit;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+	background: #2f5474;
+}
+
+button:disabled {
+	opacity: 0.45;
+	cursor: default;
+}
+
+.status {
+	padding: 6px 10px 0;
+	color: #8fb4c7;
+}
+
+.counters {
+	padding: 2px 10px;
+	color: #6d8494;
+}
+
+.counters.off {
+	color: #566;
+}
+
+.log {
+	margin: 6px 10px 10px;
+	height: 110px;
+	overflow-y: auto;
+	background: #0d1319;
+	border: 1px solid #22303b;
+	border-radius: 3px;
+	padding: 4px 6px;
+	user-select: text;
+}
+
+.log .line {
+	color: #9fc39f;
+	white-space: pre-wrap;
+	word-break: break-all;
+	padding: 1px 0;
+}
+
+.log .line:first-child {
+	color: #c7e0b0;
+}

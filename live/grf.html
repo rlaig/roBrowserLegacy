@@ -1,0 +1,53 @@
+
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                <title>sociro-v1grf</title>
+                <meta name="viewport" content="width=device-width; initial-scale=1; viewport-fit=cover">
+            </head>
+            <body>
+                <script>
+                    window.addEventListener("load", (event) => {
+                        window.ROConfig = {
+                            development: false, // don't need to compile javascript files in chrome app since it's already a package.
+							remoteClient:  "https://grf.sociro.net/",
+                            servers: [
+                                {
+                                    display: 'sociro',
+                                    desc: "server-beta",
+                                    address: 'sociro.net',
+                                    port: 6900,
+                                    version: 55,
+                                    langtype: 5,
+                                    packetver: 20180704,
+                                    forceUseAddress: false,
+                                    socketProxy: "wss://sociro.net:5999/",
+                                    packetKeys: false
+                                },
+                            ],
+                            packetDump:  false,
+                            skipServerList:  true,
+                            skipIntro:       true,
+                            clientVersionMode: 'PacketVer',
+                            plugins: {},
+							clientHash: null,
+							enableCashShop: false,
+							enableBank: false,
+							enableMapName: false,
+                            enableRefineUI: false,
+                            enableDmgSuffix: false,
+							enableCheckAttendance: false,
+							CameraMaxZoomOut: 5,
+                            loadLua: true,
+                        };
+
+                        script = document.createElement('script');
+                        script.type = 'module';
+                        script.src = 'GrfViewer.js';
+                        document.getElementsByTagName('body')[0].appendChild(script);
+                    });
+                </script>
+            </body>
+        </html>
+

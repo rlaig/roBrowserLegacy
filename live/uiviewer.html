@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>sociro-uiviewer</title>
+        <meta name="viewport" content="width=device-width; initial-scale=1; viewport-fit=cover">
+    </head>
+    <body>
+        <script>
+            window.addEventListener("load", (event) => {
+                window.ROConfig = {
+                    development: true, // verbose mock-server logs in the console
+                    remoteClient: "https://grf.sociro.net/",
+                    // Top-level numeric packetver: viewers never connect to a
+                    // server, so Client.init() takes the protocol era from here.
+                    packetver: 20220406,
+                    servers: [
+                        {
+                            display: 'sociro',
+                            desc: "server-beta",
+                            address: 'sociro.net',
+                            port: 6900,
+                            version: 55,
+                            langtype: 5,
+                            packetver: 20180704,
+                            forceUseAddress: false,
+                            socketProxy: "wss://sociro.net:5999/",
+                            packetKeys: false
+                        },
+                    ],
+                    packetDump: false,
+                    skipServerList: true,
+                    skipIntro: true,
+                    clientVersionMode: 'PacketVer',
+                    plugins: {},
+                    clientHash: null,
+                    enableCashShop: false,
+                    enableBank: true,
+                    enableMapName: true,
+                    enableRefineUI: true,
+                    enableDmgSuffix: true,
+                    enableCheckAttendance: true,
+                    CameraMaxZoomOut: 4,
+                    loadLua: true,
+                    // Mock session config (no real server involved) — these
+                    // values PRESELECT the control panel, which waits for its
+                    // Start button before booting the mock session:
+                    //   map      any .rsw from the remote client (panel has hints)
+                    //   profile  'novice' | 'knight'
+                    //   scenario 'ambient' | 'none' (timeline of chat/HP/EFST events)
+                    //   panel    false to hide the control panel
+                    //   autostart true to skip the Start button and boot immediately
+                    uviewer: {
+                        map: 'prontera.rsw',
+                        profile: 'knight',
+                        scenario: 'ambient'
+                    }
+                };
+
+                const script = document.createElement('script');
+                script.type = 'module';
+                script.src = 'UViewer.js?v=3'; // bump to bust caches after a redeploy
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
